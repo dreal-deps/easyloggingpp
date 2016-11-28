@@ -17,6 +17,11 @@
 //
 #ifndef EASYLOGGINGPP_H
 #define EASYLOGGINGPP_H
+
+// Added by Soonho Kong : Ignore expansion-to-defined clang warnings
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wexpansion-to-defined"
+
 // Compilers and C++0x/C++11 Evaluation
 #if (defined(__GNUC__))
 #   define ELPP_COMPILER_GCC 1
@@ -6692,4 +6697,5 @@ el::base::debug::CrashHandler elCrashHandler(ELPP_USE_DEF_CRASH_HANDLER);\
 #else
 #   define START_EASYLOGGINGPP(argc, argv) el::Helpers::setArgs(argc, argv)
 #endif  // defined(ELPP_UNICODE)
+#pragma clang diagnostic pop
 #endif // EASYLOGGINGPP_H
